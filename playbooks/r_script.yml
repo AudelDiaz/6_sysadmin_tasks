@@ -1,5 +1,5 @@
 - name: Run Script to Servers
-  hosts: all
+  hosts: localhost
   gather_facts: True
   become: yes
   roles:

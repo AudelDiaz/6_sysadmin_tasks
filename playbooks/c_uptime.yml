@@ -1,6 +1,6 @@
 ---
 - name: Check Uptime for Servers
-  hosts: all
+  hosts: localhost
   roles:
    - check_uptime
 

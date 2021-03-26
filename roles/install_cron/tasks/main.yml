@@ -8,6 +8,7 @@
   - name: Check the crontab for root (Before)
     shell: crontab -l
     register: crontab_out_before
+    ignore_errors: yes
 
   - name: Logs Output
     debug: msg={{ crontab_out_before.stdout_lines }}

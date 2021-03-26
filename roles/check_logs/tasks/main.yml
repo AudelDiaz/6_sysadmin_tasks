@@ -6,7 +6,8 @@
   register: current_date_time
 
 - name: Check the logs
-  shell: grep "`date --date="today" +%b\ %e`" {{ log_file }}
+  #shell: grep "`date --date="today" +%b\ %e`" {{ log_file }}
+  shell: journalctl --since $(date +"%Y-%m-%d") -r
   become: yes
   register: log_messages
   ignore_errors: true

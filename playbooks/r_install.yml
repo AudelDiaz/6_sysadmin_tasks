@@ -1,6 +1,6 @@
 ---
 - name: Install additional tools/packages
-  hosts: all
+  hosts: localhost
   gather_facts: True
   become_user: root
   become: yes

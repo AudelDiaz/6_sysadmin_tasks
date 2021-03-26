@@ -3,5 +3,5 @@
 # Defaults
 
 log_file: /var/log/messages
-dump_dir: /tmp/
+dump_dir: ../tmp/
 

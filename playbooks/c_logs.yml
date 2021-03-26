@@ -1,6 +1,6 @@
 ---
 - name: Check Logs for Servers
-  hosts: all
+  hosts: localhost
   gather_facts: True
   remote_user: ansible
   become_user: root
