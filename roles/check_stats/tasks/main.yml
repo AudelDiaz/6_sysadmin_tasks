@@ -5,6 +5,20 @@
   shell: date +"%Y%m%d%H%M%S"
   register: current_date_time
 
+- name: Install sysstat
+  community.general.pacman:
+    name: sysstat
+    state: present
+
+- name: Make sure a service is running
+  ansible.builtin.systemd:
+    state: started
+    name: "{{ item }}"
+  loop:
+    - sysstat
+    - sysstat-collect.timer
+    - sysstat-summary.timer
+
 - name: gather sar information
   command: "{{ command }}"
   register: sar_all
